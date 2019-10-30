@@ -1,0 +1,51 @@
+set ruler
+set tabstop=4
+set shiftwidth=4
+set number
+set nocompatible              " be iMproved, required
+set wrap!
+set cursorline
+
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-fugitive'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'git://git.wincent.com/command-t.git'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'ycm-core/YouCompleteMe'
+Plugin 'ternjs/tern_for_vim'
+Plugin 'joshdick/onedark.vim'
+Plugin 'mxw/vim-jsx'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'rafi/awesome-vim-colorschemes'
+Plugin 'mattn/emmet-vim'
+Plugin 'ayu-theme/ayu-vim'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on 
+
+let g:user_emmet_leader_key=','
+
+map <C-n> :NERDTreeToggle<CR>
+
+autocmd FileType typescript setlocal shiftwidth=2 tabstop=2
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+autocmd FileType html       setlocal shiftwidth=2 tabstop=2
+autocmd FileType css setlocal shiftwidth=2 tabstop=2
+autocmd FileType jsx setlocal shiftwidth=2 tabstop=2
+set completeopt-=preview
+
+execute pathogen#infect()
+let ayucolor="dark"
+
